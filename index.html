@@ -1,21 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TriendClasses - JKSSB Test Series</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriendClasses | JKSSB Test Series</title>
     <style>
-        body { font-family: Arial; text-align: center; padding: 50px; background-color: #f4f4f4; }
-        h1 { color: #2c3e50; }
-        p { font-size: 1.2em; color: #555; }
-        .box { background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        :root { --primary: #2563eb; --dark: #1e293b; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f8fafc; color: var(--dark); }
+        header { background: var(--primary); color: white; padding: 2rem; text-align: center; }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; margin-top: 1rem; font-weight: bold; }
+        .price { color: #059669; font-weight: bold; font-size: 1.2rem; }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>TriendClasses</h1>
-        <p>Your Ultimate JKSSB Preparation Hub is coming soon!</p>
-        <p>Covering: English, Math, Reasoning, Computers & GS.</p>
-        <hr>
-        <p><i>Lowest Price. Highest Quality.</i></p>
+
+<header>
+    <h1>TriendClasses</h1>
+    <p>Premium JKSSB Test Series at the Most Affordable Prices</p>
+</header>
+
+<div class="container">
+    <h2>Select Your Exam</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Junior Assistant</h3>
+            <p>Full Mock Tests + Subject Tests </p>
+            <div class="price">₹29/-</div>
+            <a href="#" class="btn">Start Practice</a>
+        </div>
+        <div class="card">
+            <h3>Lab Attendant</h3>
+            <p>Full Mock Tests + Sectional Tests</p>
+            <div class="price">₹39/-</div>
+            <a href="#" class="btn">Start Practice</a>
+        </div>
+
+        <div class="card">
+            <h3>Sub Inspector / Constable</h3>
+            <p>Full Mock Tests + Sectional Tests</p>
+            <div class="price">₹49/-</div>
+            <a href="#" class="btn">Start Practice</a>
+        </div>
+
+        <div class="card">
+            <h3>Finance Accountant</h3>
+            <p>Specialized Accountancy and Math practice sets.</p>
+            <div class="price">₹99/-</div>
+            <a href="#" class="btn">Start Practice</a>
+        </div>
     </div>
+</div>
+
 </body>
 </html>
