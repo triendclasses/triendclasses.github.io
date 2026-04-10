@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKSSB Jr. Assistant Mock Test | TriendClasses</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; }
+        .quiz-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .question { font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; }
+        .option { display: block; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .option:hover { background: #e2e8f0; }
+        .correct { background: #dcfce7 !important; border-color: #22c55e; }
+        .wrong { background: #fee2e2 !important; border-color: #ef4444; }
+        #result { margin-top: 20px; font-weight: bold; text-align: center; display: none; }
+        .btn { background: #2563eb; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>JKSSB Junior Assistant - Computer Mini-Mock</h2>
+    <hr>
+    <div id="quiz-box">
+        <div class="question">1. Which of the following is the 'brain' of the computer?</div>
+        <div class="option" onclick="checkAnswer(this, false)">RAM</div>
+        <div class="option" onclick="checkAnswer(this, true)">CPU</div>
+        <div class="option" onclick="checkAnswer(this, false)">Hard Disk</div>
+        <div class="option" onclick="checkAnswer(this, false)">GPU</div>
+    </div>
+
+    <div id="result">
+        Your Score: <span id="score">0</span> / 1
+        <br><br>
+        <button class="btn" onclick="location.reload()">Restart Quiz</button>
+        <a href="index.html" style="margin-left:10px;">Back to Home</a>
+    </div>
+</div>
+
+<script>
+    let score = 0;
+    function checkAnswer(element, isCorrect) {
+        // Prevent clicking again
+        const options = element.parentElement.querySelectorAll('.option');
+        options.forEach(opt => opt.style.pointerEvents = 'none');
+
+        if (isCorrect) {
+            element.classList.add('correct');
+            score++;
+        } else {
+            element.classList.add('wrong');
+            // Show the correct one
+            options.forEach(opt => {
+                if(opt.innerText === "CPU") opt.classList.add('correct');
+            });
+        }
+        
+        setTimeout(() => {
+            document.getElementById('quiz-box').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('score').innerText = score;
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>
